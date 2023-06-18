@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://PinventApp.vercel.app"],
+    origin: ["http://localhost:3000", "http://p-invent-ten.vercel.app"],
     credentials: true,
   })
 );
@@ -36,11 +36,11 @@ app.get("/", (req, res) => {
 app.use(errorHandler);
 
 //Server Creation
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    app.listen(PORT, () => {
+    app.listen(() => {
       console.log(`Running server on port ${PORT}`);
       console.log("MongoDB Connected!");
     });
