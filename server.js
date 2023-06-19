@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 app.use(errorHandler);
 
 //Server Creation
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
