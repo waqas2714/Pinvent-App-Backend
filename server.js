@@ -36,11 +36,11 @@ app.get("/", (req, res) => {
 app.use(errorHandler);
 
 //Server Creation
-//const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    app.listen(() => {
+    app.listen(PORT,() => {
      console.log(`Running Server`);
       console.log("MongoDB Connected!");
     });
